@@ -7,12 +7,12 @@
 	},
 	"item": [
 		{
-			"name": "Get repositories",
+			"name": "GET - repositories",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/search/name",
+					"raw": "http://localhost:4000/search/repo",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -20,17 +20,31 @@
 					"port": "4000",
 					"path": [
 						"search",
-						"name"
+						"repo"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get Starred Repositories",
+			"name": "GET - Starred Repositories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
 				"url": {
 					"raw": "http://localhost:4000/starred",
 					"protocol": "http",
@@ -46,12 +60,16 @@
 			"response": []
 		},
 		{
-			"name": "Post a starred repository",
+			"name": "POST - A starred repository",
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "http://localhost:4000/starred/name",
+					"raw": "http://localhost:4000/starred/hola",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -59,14 +77,14 @@
 					"port": "4000",
 					"path": [
 						"starred",
-						"name"
+						"hola"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "DELETE - Starred repository",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -86,7 +104,7 @@
 			"response": []
 		},
 		{
-			"name": "Get profile",
+			"name": "GET - Profile",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -105,7 +123,7 @@
 			"response": []
 		},
 		{
-			"name": "Put name",
+			"name": "PUT - Name",
 			"request": {
 				"method": "PUT",
 				"header": [],
