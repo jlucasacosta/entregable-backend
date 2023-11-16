@@ -6,17 +6,21 @@ import mongoose from "mongoose";
 dotenv.config({ path: ".env" });
 
 const port = process.env.PORT || 4001;
+
 const connectionString = process.env.DB_CONNECTION;
 
-/* mongoose
-  .connect(connectionString)
-  .then(() => {
-    console.log("Conexion exitosa a la base de datos");
-  })
-  .catch((error) => {
-    console.log("Error al conectar a la base de datos: ", error);
-  }); */
-
+if (!connectionString) {
+  console.error("ERROR: La cadena de conexión a la base de datos no está definida.");
+} else {
+  mongoose
+    .connect(connectionString)
+    .then(() => {
+      console.log("Conectado a la base de datos");
+    })
+    .catch((error) => {
+      console.error("Error al conectar a la base de datos: ", error);
+    });
+}
 app.use(express.json());
 
 app.listen(port, () => {

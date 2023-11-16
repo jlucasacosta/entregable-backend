@@ -5,7 +5,7 @@ import {
   makeStarredRepo,
   deleteStarredRepo,
   getProfile,
-  updateProfile
+  updateProfile,
 } from "../controllers/finder.controller";
 
 const FinderRouter = Router();
@@ -14,7 +14,7 @@ FinderRouter.get("", (req, res) => {
   res.send("Hola mundo");
 });
 
-FinderRouter.get("/search/:name", getAllRepositories);
+FinderRouter.get("/search/:repo", getAllRepositories);
 
 FinderRouter.get("/starred", getStarredRepos);
 

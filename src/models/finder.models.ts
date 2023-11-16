@@ -11,18 +11,12 @@ export interface IRepos {
   html_url: string;
 }
 
-export interface IUser {
-  id: Number;
-  avatar_url: string;
-  login: string;
-  location: string;
-  followers: Number;
-  html_url: string;
-  repos_url: string;
+export interface IStarredRepo {
+  name: string;
+  description: string;
 }
 
-export interface IComment {
-    id: Number;
-    repoId: string;
-    text: string;
-  }
+export interface IHistorial {
+  repo: string,
+  timeData: Date;
+}
