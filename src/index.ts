@@ -21,7 +21,6 @@ if (!connectionString) {
       console.error("Error al conectar a la base de datos: ", error);
     });
 }
-app.use(express.json());
 
 app.listen(port, () => {
   console.log(`Servidor en http://localhost:4000`);
